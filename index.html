@@ -68,16 +68,12 @@
     .orbit::before { inset: 29px; }
     .orbit::after { inset: 74px; }
     .orbit-dot { position: absolute; top: 43px; right: 76px; width: 9px; height: 9px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 20px rgba(231,142,109,.65); }
-    .visual-card { position: relative; z-index: 1; width: min(100%, 360px); padding: 27px; border: 1px solid rgba(255,255,255,.17); border-radius: 20px; background: rgba(24,37,34,.88); box-shadow: 0 25px 70px rgba(0,0,0,.25); backdrop-filter: blur(12px); }
-    .visual-card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; color: #aebbb2; font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-    .live-dot { display: inline-flex; align-items: center; gap: 7px; color: var(--lime); letter-spacing: .04em; text-transform: none; }
-    .live-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-    .flow-step { display: grid; grid-template-columns: 39px 1fr 18px; align-items: center; gap: 12px; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.1); }
-    .flow-num { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid rgba(199,238,112,.34); border-radius: 50%; color: var(--lime); font-size: .68rem; }
-    .flow-title { display: block; color: #f4f1e9; font-size: .9rem; font-weight: 680; }
-    .flow-sub { display: block; margin-top: 2px; color: #95a39a; font-size: .72rem; }
-    .flow-link { color: var(--lime); font-size: 1rem; }
-    .visual-note { margin: 21px 0 0; color: #9daaa1; font-size: .72rem; }
+    .hero-portrait { position: relative; z-index: 1; width: min(76%, 290px); height: 400px; margin: 0; overflow: hidden; border: 1px solid rgba(199,238,112,.38); border-radius: 160px 160px 20px 20px; background: #cbd0d2; box-shadow: 0 25px 70px rgba(0,0,0,.3); }
+    .hero-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 27%; }
+    .hero-portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(16,26,24,.9) 100%); pointer-events: none; }
+    .hero-portrait figcaption { position: absolute; z-index: 1; right: 20px; bottom: 22px; left: 20px; display: grid; gap: 5px; }
+    .hero-portrait-name { color: #f4f1e9; font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; }
+    .hero-portrait-role { color: #c1cbc3; font-size: .78rem; }
     .hero-meta { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0; margin-top: 72px; border-top: 1px solid rgba(255,255,255,.13); }
     .meta-item { min-width: 170px; padding: 19px 32px 0 0; margin-right: 32px; }
     .meta-item + .meta-item { padding-left: 32px; border-left: 1px solid rgba(255,255,255,.13); }
@@ -179,6 +175,7 @@
       .hero { padding-top: 145px; }
       .hero-copy { max-width: 760px; }
       .hero-visual { min-height: 340px; }
+      .hero-portrait { width: min(76%, 270px); height: 350px; }
       .orbit { width: 300px; height: 300px; }
       .section-heading { grid-template-columns: 1fr; gap: 15px; }
       .section-intro { margin: 0; }
@@ -203,6 +200,7 @@
       h1 { font-size: clamp(3rem, 15vw, 4.65rem); }
       .hero-lead { font-size: .96rem; }
       .hero-visual { min-height: 310px; }
+      .hero-portrait { width: min(78%, 240px); height: 300px; }
       .visual-card { padding: 21px; }
       .hero-meta { margin-top: 38px; }
       .meta-item { min-width: 50%; padding: 15px 14px 0 0; margin: 0; }
@@ -256,15 +254,15 @@
             </div>
           </div>
 
-          <div class="hero-visual" aria-label="Illustration du passage d’un problème à une solution">
+          <div class="hero-visual" aria-label="Portrait d’Abdourahmane Diallo">
             <div class="orbit" aria-hidden="true"><span class="orbit-dot"></span></div>
-            <div class="visual-card">
-              <div class="visual-card-top"><span>Ma démarche</span><span class="live-dot">en progression</span></div>
-              <div class="flow-step"><span class="flow-num">01</span><span><span class="flow-title">Comprendre</span><span class="flow-sub">Poser le problème clairement</span></span><span class="flow-link" aria-hidden="true">↗</span></div>
-              <div class="flow-step"><span class="flow-num">02</span><span><span class="flow-title">Modéliser</span><span class="flow-sub">Structurer les états et les données</span></span><span class="flow-link" aria-hidden="true">↗</span></div>
-              <div class="flow-step"><span class="flow-num">03</span><span><span class="flow-title">Construire</span><span class="flow-sub">Coder, tester, expliquer</span></span><span class="flow-link" aria-hidden="true">↗</span></div>
-              <p class="visual-note">Une méthode que je mets en pratique dans mes projets universitaires.</p>
-            </div>
+            <figure class="hero-portrait">
+              <img src="portrait-abdourahmane.jpg" alt="Portrait professionnel d’Abdourahmane Diallo" width="1024" height="1536">
+              <figcaption>
+                <span class="hero-portrait-name">Abdourahmane Diallo</span>
+                <span class="hero-portrait-role">Étudiant en L3 informatique · Data & IA</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
 
